@@ -1,0 +1,24 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+td {
+  padding: 0.75 * $main-padding;
+  @include table-border;
+}
+
+img {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
+/*                   Медиа                      */
+/*----------------------------------------------*/
+@media (max-width: 1000px) {
+
+    td {
+      min-width: 80px;
+      padding: 0.1rem;
+    }
+
+  }

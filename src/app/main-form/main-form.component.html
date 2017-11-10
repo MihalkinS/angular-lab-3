@@ -1,0 +1,44 @@
+<!-- <form (ngSubmit)="btnClick()" #mainFrom="ngForm">  -->
+<form (ngSubmit)="addEmployee()" #form="ngForm" ngNativeValidate> 
+  <input type="hidden" name="index" id="index" [(ngModel)]="employee.id" value=""> <!-- Здесь будет индекс строки таблицы для редактирования -->
+  <div class="formControl">
+      <label for="surname">Фамилия</label>
+      <input type="text" name="surname" [(ngModel)]="employee.surName" placeholder="Фамилия" pattern="^[A-Za-zА-Яа-яЁё\s\-]+$" required autofocus />
+  </div>
+  <div class="formControl">
+      <label for="name">Имя</label>
+      <input type="text" name="name" [(ngModel)]="employee.name" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\s\-]+$" required />
+  </div>
+  <div class="formControl">
+      <label for="patronymic">Отчество</label>
+      <input type="text" name="patronymic" [(ngModel)]="employee.patronymic" placeholder="Отчество" pattern="^[A-Za-zА-Яа-яЁё\s\-]+$" required/>
+  </div>
+  <div class="formControl">
+      <label for="dob">Дата рождения</label>
+      <input type="text" onfocus="(this.type='date')" onfocusout="(this.type='text')" name="dob" [(ngModel)]="employee.dob" placeholder="12/02/2001" required />
+  </div>
+  <div class="formControl">
+      <label for="address">Адрес проживания</label>
+      <input type="text" name="address" [(ngModel)]="employee.address" placeholder="г. Рига, ул. Московская, д. 32, кв. 101" pattern="^[A-Za-zА-Яа-яЁё\s\-\.\,]+$" required />
+  </div>
+  <div class="formControl">
+      <label for="phone">Контактный телефон</label>
+      <input type="text" name="phone" [(ngModel)]="employee.phone" placeholder="+375291234567 "pattern="^[0-9\+]+$" required />
+  </div>
+  <div class="formControl">
+      <label for="email">Электронный адрес</label>
+      <input type="email" name="email" [(ngModel)]="employee.email" placeholder="myEmail@anyHost.com" required />
+  </div>
+  <div class="formControl">
+      <label for="position">Должность</label>
+      <input type="text" name="position" [(ngModel)]="employee.position" placeholder="Data Analyst" pattern="^[A-Za-zА-Яа-яЁё\s\.\-]+$" required />
+  </div>
+  <div class="formControl">
+      <label for="salary">Сумма оклада</label>
+      <input type="number" name="salary" [(ngModel)]="employee.salary" placeholder="777$" pattern="/^(0$|-?[1-9]\d*(\.\d*[1-9]$)?|-?0\.\d*[1-9])$/" required />
+  </div>
+  <div class="formButtons">
+      <button type="submit" id="btnSubmit">{{ btnname }}</button>
+      <button type="reset" id="btnReset">Очистить</button>           
+  </div>
+</form>

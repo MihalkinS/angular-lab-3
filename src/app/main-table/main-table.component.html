@@ -1,0 +1,17 @@
+<div class="table" *ngIf="employees.length">
+  <table>
+      <tr>
+        <th>№</th>
+        <th>ФИО</th>
+        <th>Должность</th>
+        <th>Дата рождения</th>
+        <th>Адрес проживания</th>
+        <th>Контактный телефон</th>
+        <th>Электронный адрес</th>
+        <th>Сумма оклада</th>
+        <th>Редактировать</th>
+        <th>Удалить</th>
+      </tr>
+      <tr app-table-row *ngFor="let employee of employees; let i = index" [employee]="employee" [index]="i + 1" (delete)="delete($event)" (edit)="edit($event)"></tr>               
+  </table>
+  </div>

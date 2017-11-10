@@ -1,1 +1,107 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/variables';
+@import 'assets/styles/mixins';
+
+@font-face {
+    font-family: mainFont;
+    src: $main-font-url;
+}
+
+html, body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: mainFont, Helvetica, Arial, sans-serif;
+}
+
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: $main-margin;
+    margin-right: auto;
+    margin-left: auto;
+    @include box-sizing;
+}
+
+.row {
+    margin-bottom: 3 * $main-margin;
+}
+
+hr {
+  height: 1px; 
+  border: 0; 
+  background-image: -webkit-linear-gradient(left, $delimiter-left-color, $delimiter-mid-color, $delimiter-right-color);
+  background-image: -moz-linear-gradient(left, $delimiter-left-color, $delimiter-mid-color, $delimiter-right-color);
+  background-image: -ms-linear-gradient(left, $delimiter-left-color, $delimiter-mid-color, $delimiter-right-color);
+  background-image: -o-linear-gradient(left, $delimiter-left-color, $delimiter-mid-color, $delimiter-right-color);
+}
+
+/*                   Медиа                      */
+/*----------------------------------------------*/
+@media (max-width: 1000px) {
+  
+  .container {
+      width: 100%;
+      max-width: 920px;
+      padding-right: 0.25 * $main-padding;
+      padding-left: 0.25 * $main-padding;
+  }
+
+}
+/*---------------------------------------*/
+/*---------------------------------------*/
+
+/*               плейсхолдер             */
+/*---------------------------------------*/
+::-webkit-input-placeholder {  /* Chrome */
+  color: $placeholder-color;
+}
+
+:-ms-input-placeholder { /* IE 10 */
+  color: $placeholder-color;    
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: $placeholder-color;
+  opacity: 1;
+}
+
+:-moz-placeholder { /* Firefox 18- */ 
+  color: $placeholder-color;
+  opacity: 1;
+}
+/*---------------------------------------*/
+/*---------------------------------------*/
+
+
+/*               скролл                  */
+/*---------------------------------------*/
+::-webkit-scrollbar-button { /* кнопки вверх\вниз */
+  height: 0px;
+  width: 10px;
+}
+  
+::-webkit-scrollbar-track { /* Дорожка */
+  background-color: $scroll-track-color;
+}
+  
+::-webkit-scrollbar-thumb { /* ползунок */
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background-color: $scroll-thumb-color;
+  &:hover {    /* ползунок при наведении */
+      background-color: $scroll-thumb-color-hover; 
+  }
+}
+  
+::-webkit-resizer{ /* уголок при увиличении\уменьшении */
+  height: 0px;
+  width: 10px;
+}
+  
+::-webkit-scrollbar{ /* весь скролл */
+  width: 10px;
+}
+/*---------------------------------------*/
+/*---------------------------------------*/
